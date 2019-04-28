@@ -1,0 +1,123 @@
+import React from 'react'
+import { Route } from 'react-router-dom'
+
+import { Row, Col, Menu, Breadcrumb, Layout, Button, Radio, Icon } from 'antd'
+import logo from './yin.svg'
+import './App.css'
+import './homepage'
+import Arch from './Arch'
+import Begin from './Begin'
+import { NavLink } from 'react-router-dom'
+const {
+  Header, Footer, Sider, Content,
+} = Layout;
+const { SubMenu } = Menu;
+
+class App extends React.Component {
+  state = {
+    size: 'large',
+  }
+
+  render() {
+    var float = {
+      float: "left",
+    };
+
+    const size = this.state.size;
+    return (
+      <div className="App" >
+        <Layout>
+          <Header>
+            <img src={logo} className='App-logo' alt='logo' />
+            <p >
+
+              Influences of Taoism
+              </p>
+
+
+
+
+          </Header>
+
+          <Sider width={200} style={{ background: "#FFF" }}>
+            <Menu
+              theme="dark"
+              mode="inline"
+              defaultSelectedKeys={["1"]}
+              defaultOpenKeys={["sub1"]}
+              style={{ height: "100%", borderRight: 0 }}
+            >
+              <SubMenu
+                key="sub1"
+                title={
+                  <span>
+                    <Icon type="highlight" />
+                    The Arts
+              </span>
+                }
+              >
+                <Menu.Item key="1">
+                  <Icon type="bg-colors" />
+                  Art
+            </Menu.Item>
+                <Menu.Item key="2">
+                  <Icon type="home" />
+                  Architecture
+            </Menu.Item>
+                <Menu.Item key="3">
+                  <Icon type="file-text" />
+                  Poetry
+            </Menu.Item>
+              </SubMenu>
+              <SubMenu
+                key="sub2"
+                title={
+                  <span>
+                    <Icon type="medicine-box" />
+                    Medicine
+              </span>
+                }
+              >
+                <Menu.Item key="5">option5</Menu.Item>
+                <Menu.Item key="6">option6</Menu.Item>
+                <Menu.Item key="7">option7</Menu.Item>
+                <Menu.Item key="8">option8</Menu.Item>
+              </SubMenu>
+              <SubMenu
+                key="sub3"
+                title={
+                  <span>
+                    <Icon type="notification" />
+                    subnav 3
+              </span>
+                }
+              >
+                <Menu.Item key="9">option9</Menu.Item>
+                <Menu.Item key="10">option10</Menu.Item>
+                <Menu.Item key="11">option11</Menu.Item>
+                <Menu.Item key="12">option12</Menu.Item>
+              </SubMenu>
+            </Menu>
+          </Sider>
+
+          <Content>      <Button type="primary" size={size}><NavLink exact to="/begin">Begin</NavLink>
+
+          </Button>     <Route exact path="/begin" component={Begin} />
+            <Route exact path="/architecture" component={Arch} />
+          </Content>
+          <Footer>Footer</Footer>
+        </Layout>
+
+      </div >
+    )
+
+
+
+
+  }
+
+}
+
+
+
+export default App
