@@ -23,7 +23,7 @@ class animationTest extends Component {
                     params={{
                         polygon: {
                             enable: true,
-                            type: 'inside',
+                            type: 'n',
                             move: {
                                 radius: 10
                             },
