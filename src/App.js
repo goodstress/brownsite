@@ -17,8 +17,8 @@ class App extends React.Component {
       <div>
         <Layout>
           <Header className="header">
-            <div className="logo" />
             <img src="http://www.humanreligions.info/yy.gif" className='App-logo' alt='logo' height="42" width="42" />
+            <div className="logo" ></div>
           </Header>
           <Layout>
             <Sider width={200} style={{ background: "#FFF" }}>
