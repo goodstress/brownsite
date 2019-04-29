@@ -5,9 +5,13 @@
   "dependencies": {
     "antd": "^3.16.5",
     "rc-banner-anim": "^2.2.5",
+    "rc-scroll-anim": "^2.5.7",
     "rc-tween-one": "^2.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-particles-js": "^2.6.0",
+    "react-pose": "^4.0.8",
+    "react-pose-text": "^3.1.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0"
   },

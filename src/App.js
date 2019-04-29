@@ -6,7 +6,7 @@ import { Layout, Menu, Breadcrumb, Icon } from "antd";
 import Art from "./views/Art/Art"
 import home from "./views/home/home"
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-
+import animationTest from "./views/animationTest/animationTest"
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -57,20 +57,14 @@ class App extends React.Component {
                     Poetry
             </Menu.Item>
                 </SubMenu>
-                <SubMenu
-                  key="sub2"
-                  title={
-                    <span>
-                      <Icon type="medicine-box" />
-                      Medicine
-              </span>
-                  }
-                >
-                  <Menu.Item key="5">option5</Menu.Item>
-                  <Menu.Item key="6">option6</Menu.Item>
-                  <Menu.Item key="7">option7</Menu.Item>
-                  <Menu.Item key="8">option8</Menu.Item>
-                </SubMenu>
+                <Menu.Item key="5" >
+                  <Link to="/animation">
+                    <Icon type="medicine-box" />
+                    Medicine
+                </Link>
+
+                </Menu.Item>
+
                 <SubMenu
                   key="sub3"
                   title={
@@ -101,7 +95,8 @@ class App extends React.Component {
                   minHeight: 280
                 }}
               >
-                <Route path="/" component={home} />
+                <Route exact path="/" component={home} />
+                <Route path="/animation" component={animationTest} />
                 <Route path="/Art" component={Art} />
               </Content>
             </Layout>
