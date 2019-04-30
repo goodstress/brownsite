@@ -5,9 +5,15 @@ import "./App.css";
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
 import Art from "./views/Art/Art"
 import home from "./views/home/home"
+import medicine from "./views/medicine/medicine"
+import architecture from "./views/Art/architecture"
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import animationTest from "./views/animationTest/animationTest"
-
+import Poetry from "./views/Art/Poetry"
+import politics from "./views/politics/politics"
+import metal from "./views/metal/metal"
+import interior from "./views/interior/interior"
+import importance from "./views/importance/importance"
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
@@ -45,47 +51,71 @@ class App extends React.Component {
                   }
                 >
                   <Menu.Item key="2">
-                    <Icon type="bg-colors" />
-                    Art
-            </Menu.Item>
+                    <Link to="/art">
+                      <Icon type="picture" />
+                      Art
+                  </Link>
+
+                  </Menu.Item>
                   <Menu.Item key="3">
-                    <Icon type="home" />
+                  <Link to="/architecture">
+                  <Icon type="home" />
                     Architecture
+                  </Link>
+
             </Menu.Item>
                   <Menu.Item key="4">
-                    <Icon type="file-text" />
-                    Poetry
-            </Menu.Item>
+                    <Link to="/Poetry">
+                      <Icon type="file-text" />
+                      Poetry
+                  </Link>
+
+                  </Menu.Item>
                 </SubMenu>
                 <Menu.Item key="5" >
-                  <Link to="/animation">
+                  <Link to="/medicine">
                     <Icon type="medicine-box" />
                     Medicine
                 </Link>
 
                 </Menu.Item>
 
-                <SubMenu
-                  key="sub3"
-                  title={
-                    <span>
-                      <Icon type="notification" />
-                      subnav 3
-              </span>
-                  }
-                >
-                  <Menu.Item key="9">option9</Menu.Item>
-                  <Menu.Item key="10">option10</Menu.Item>
-                  <Menu.Item key="11">option11</Menu.Item>
-                  <Menu.Item key="12">option12</Menu.Item>
-                </SubMenu>
+                <Menu.Item key="6">
+                  <Link to="/interior"> <Icon type="home" />
+                    Interior Design</Link>
+
+
+                </Menu.Item>
+                <Menu.Item key="7">
+                  <Link to="/metal">
+                    <Icon type="gold" />
+                    Metallurgy
+                </Link>
+                </Menu.Item>
+                <Menu.Item key="8">
+                <Link to="/politics"> 
+                <Icon type="flag" /> 
+                Politics
+
+                
+                </Link>
+
+
+                </Menu.Item>
+                <Menu.Item>
+
+                  <Link to="/importance">
+                  <Icon type="exclamation" />
+                  Importance of Taoism
+                  
+                  </Link>
+                </Menu.Item>
               </Menu>
             </Sider>
             <Layout style={{ padding: "0 24px 24px" }}>
               <Breadcrumb style={{ margin: "16px 0" }}>
                 <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
+                <Breadcrumb.Item>Taoism</Breadcrumb.Item>
               </Breadcrumb>
               <Content
                 style={{
@@ -96,8 +126,14 @@ class App extends React.Component {
                 }}
               >
                 <Route exact path="/" component={home} />
-                <Route path="/animation" component={animationTest} />
+                <Route path="/medicine" component={medicine} />
                 <Route path="/Art" component={Art} />
+                <Route path="/Poetry" component={Poetry} />
+                <Route path="/interior" component={interior} />
+                <Route path="/metal" component={metal} />
+                <Route path="/architecture" component={architecture} />
+                <Route path="/politics" component={politics} />
+                <Route path="/importance" component={importance} />
               </Content>
             </Layout>
           </Layout>
